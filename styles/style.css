@@ -40,7 +40,7 @@ header {
 }
 
 nav {
-    margin: 20x;
+    margin: 20px;
 }
 
 nav ul {
@@ -232,12 +232,13 @@ footer {
     }
 
     nav {
-        margin: 0;
+        margin: 0px;
     }
 
     nav ul {
         display: flex;
         justify-content: space-between;
+        margin: 0px;
     }
 
     nav li {
@@ -260,7 +261,7 @@ footer {
         width: 30%;
     }
 
-    /* product section */
+    /* products section */
 
     .main-container {
         display: grid;
@@ -279,8 +280,17 @@ footer {
         height: 230px;
     }
 
+    .card-2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
     .card-img-1 {
         width: 60%;
+    }
+
+    .card-img-2 {
+        width: 80%;
     }
 
     .card-img-1 img {
