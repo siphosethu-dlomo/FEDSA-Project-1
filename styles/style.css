@@ -261,7 +261,7 @@ footer {
         width: 30%;
     }
 
-    /* product section */
+    /* products section */
 
     .main-container {
         display: grid;
@@ -280,8 +280,17 @@ footer {
         height: 230px;
     }
 
+    .card-2 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
     .card-img-1 {
         width: 60%;
+    }
+
+    .card-img-2 {
+        width: 80%;
     }
 
     .card-img-1 img {
