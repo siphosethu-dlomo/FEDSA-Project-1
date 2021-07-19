@@ -52,12 +52,13 @@ nav li {
     }
 
     nav {
-        margin: 0;
+        margin: 0px;
     }
 
     nav ul {
         display: flex;
         justify-content: space-between;
+        margin: 0px;
     }
 
     nav li {
