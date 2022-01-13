@@ -81,12 +81,7 @@ nav li {
   border: 2px solid var(--primary);
   display: inline-block;
   padding: 15px 80px;
-}
-  
-.btn-see-deals-container button {
-  background-color: transparent;
   color: var(--primary);
-  border: none;
 }
 
 section {
@@ -110,7 +105,7 @@ section {
   max-width: 450px;
 }
 
-.card-img-1 img {
+.card-img img {
   width: 100%;
   height: 414px;
   object-fit: cover;
@@ -120,7 +115,7 @@ section {
   font-weight: 100;
 }
 
-.card-text {
+.card-text-container {
   padding: 20px;
 }
   
@@ -143,12 +138,13 @@ section {
   font-size: 14px;
 }
   
-.cart {
+.icons-container {
   display: flex;
   align-items: flex-end;
 }
   
-.icon {
+.icon-heart,
+.icon-shopping-cart {
   margin: 0px 3px;
   width: 30px;
   height: 30px;
@@ -157,7 +153,8 @@ section {
   cursor: pointer;
 }
 
-.icon img {
+.icon-heart img,
+.icon-shopping-cart img {
   width: 30px;
   height: 30px;
 }
@@ -170,16 +167,11 @@ section {
 .btn-load-more {
   padding: 15px;
   margin-top: 30px;
+  color: var(--background-primary);
   background-color: var(--primary);
   border: none;
   text-align: center;
   width: 230px;
-}
-  
-.btn-load-more button {
-  color: var(--background-primary);
-  background-color: transparent;
-  border: transparent;
 }
 
 footer {
@@ -285,7 +277,7 @@ footer {
     flex-direction: row-reverse;
   }
 
-  .card-img-1 {
+  .card-img {
     width: 60%;
   }
 
@@ -293,7 +285,7 @@ footer {
     width: 80%;
   }
 
-  .card-img-1 img {
+  .card-img img {
     height: 100%;
     width: 100%;
   }
@@ -307,7 +299,8 @@ footer {
     margin-top: 10px;
   }
 
-  .icon {
+  .icon-heart,
+  .icon-shopping-cart {
     margin: 0px 3px;
     width: 24px;
     height: 24px;
@@ -315,7 +308,8 @@ footer {
     border: none;
   }
 
-  .icon img {
+  .icon-heart img,
+  .icon-shopping-cart img {
     width: 24px;
     height: 24px;
   }
@@ -344,5 +338,4 @@ footer {
   .footer-bottom-title h3 {
     font-size: 1.5rem;
   }
-
 }
