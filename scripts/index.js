@@ -101,3 +101,76 @@ let secondProductItemElement = listItems[4];
 secondProductItemElement.classList.add('card-2');
 let childOfsecondProductItemElement = listItems[4].firstElementChild;
 childOfsecondProductItemElement.classList.add('card-img-2');
+
+// shopping card module pattern
+const shoppingCart = (function () {
+  // private
+  // const selectedItems = [];
+
+  // function getItems() {
+  //   return items;
+  // }
+
+  function getItems() {
+    const selectedItems = [];
+    const cartIcon = document.querySelectorAll('.icon-shopping-cart');
+
+    cartIcon.forEach(icon => {
+      icon.addEventListener('click', (e) => {
+        const item = Number(e.target.parentElement.parentElement.previousElementSibling.firstElementChild.nextElementSibling.textContent.substring(1));
+        selectedItems.push(item);
+        const sum = selectedItems.reduce((output, curr) => {
+          output = output + curr;
+          return output
+        }, 0);
+        let opp = sum
+        // console.log(sum);
+        // console.log(selectedItems);
+      });
+    });
+    // NOTE: selectedItem. must be avaiable outside the scor of foreach
+  } 
+
+  function addToCart() {
+ 
+    // items.push(item);
+  }
+
+  function getTotalCost() {
+    let totalCost = 0;
+    let discountPrices = document.querySelectorAll('.discount-price');
+
+    let allDiscountPrices = [];
+
+    discountPrices.forEach(discountPrice => {
+      const storeDiscountPrice = Number(discountPrice.textContent.substring(1));
+      allDiscountPrices.push(storeDiscountPrice);
+    });
+
+    const sumOfAllDiscountPrices = allDiscountPrices.reduce((output, currentDiscountPrice) => {
+      output = output + currentDiscountPrice;
+      return output;
+    }, 0);
+    
+    totalCost = sumOfAllDiscountPrices;
+    return totalCost;
+  } 
+
+  // public
+  return {
+    getItems,
+    addToCart,
+    getTotalCost,
+  }
+})();
+
+let totalCost = shoppingCart.getTotalCost();
+let dd = shoppingCart.getItems();
+console.log(dd);
+// console.log(dd);
+
+// fixed container
+const overlayDiv = document.createElement('div');
+overlayDiv.classList.add('displayTotalPrice');
+overlayDiv.textContent = `The total cost of your products is: ${totalCost}`;
+window.document.body.appendChild(overlayDiv);
